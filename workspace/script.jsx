@@ -32,9 +32,14 @@ function changeVideoTitle(jsonFile){
     theTextLayerThree.property("Source Text").setValue(videoTitles[2]);
 }
 
-function main(path){
+function saveProject(){
+    app.project.save(File('./projects/final_project.aep'));
+};
+
+function main(path, jsonFile){
     loadTemplate(path);
     changeVideoTitle(jsonFile);
+    saveProject();
 }
 
 main(path, jsonFile);
