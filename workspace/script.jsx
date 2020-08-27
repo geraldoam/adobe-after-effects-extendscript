@@ -1,7 +1,6 @@
 ﻿var path = './template.aep';
 var jsonFile = File("./ranking.json");
 
-
 function loadTemplate(path){
     app.open(new File(path));
 }
