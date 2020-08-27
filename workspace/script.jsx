@@ -8,10 +8,6 @@ function loadTemplate(path){
 function changeVideoTitle(jsonFile){
     var theComposition = app.project.item(1);
 
-    var theTextLayerOne = theComposition.layers[1];
-    var theTextLayerTwo = theComposition.layers[2];
-    var theTextLayerThree = theComposition.layers[3];
-
     jsonFile.open("r");
     var data = jsonFile.read();
     data = JSON.parse(data);
@@ -21,9 +17,10 @@ function changeVideoTitle(jsonFile){
         videoTitles.push(data[i].videoName);
     }
 
-    theTextLayerOne.property("Source Text").setValue(videoTitles[0]);
-    theTextLayerTwo.property("Source Text").setValue(videoTitles[1]);
-    theTextLayerThree.property("Source Text").setValue(videoTitles[2]);
+    for (var i=0;i < videoTitles.length;i++) {
+        var theTextLayer = theComposition.layers[i == 0 ? 1 : i]
+        theTextLayer.property('Source Text').setValue(videoTitles[i])
+    }
 }
 
 function saveProject(){
