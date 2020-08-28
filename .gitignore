@@ -1,2 +1,5 @@
 # Ignoring example videos
 workspace/files
+
+# Python Files
+workspace/__pycache__
