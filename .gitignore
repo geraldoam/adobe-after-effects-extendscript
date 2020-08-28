@@ -3,3 +3,7 @@ workspace/files
 
 # Python Files
 workspace/__pycache__
+
+# Output Files
+workspace/output/*
+workspace/projects/*
