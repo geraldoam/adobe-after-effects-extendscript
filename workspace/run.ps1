@@ -1,12 +1,10 @@
 # Script
-$exe_script = 'C:\Program Files\Adobe\Adobe After Effects 2020\Support Files\AfterFX.exe'
+$exe_script = 'C:\Program Files\Adobe\Adobe After Effects 2020\Support Files\AfterFX.com'
 $path_to_jsx_script = 'C:\Users\geral\Desktop\Freela\After\ae-extendscript\workspace\script.jsx'
-$invoke_script = & "$exe_script" -r $path_to_jsx_script
+$invoke_script = & "$exe_script" -noui -r $path_to_jsx_script
 $job_script = Start-Job { $invoke_script }
 Wait-Job $job_script
 Receive-Job $job_script
-Start-Sleep -s 5
-
 
 # Render
 $exe_render = 'C:\Program Files\Adobe\Adobe After Effects 2020\Support Files\aerender.exe'
