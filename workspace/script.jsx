@@ -1,4 +1,5 @@
-﻿var path = './template.aep';
+﻿//@include ./lib/json2.js
+var path = './template.aep';
 var jsonFile = File('./ranking.json');
 
 function loadTemplate(path){
